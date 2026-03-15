@@ -39,8 +39,10 @@ int main()
 	// 4. Add the attempt counter.
 	// 5. Add play again.
 	// 6. Add difficulty levels.
-
-    std::cout << "Hello World!\n";
+	
+	srand(time(0)); // Seed the random number generator
+	int randomNumber = rand() % 100 + 1; // Generate a random number between 1 and 100
+    std::cout << randomNumber;
 	return 0;
 
 	// OPTIONAL
