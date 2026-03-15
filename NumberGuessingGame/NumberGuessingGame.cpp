@@ -14,27 +14,27 @@ void clearScreen()
 
 int main()
 {
-	// Generate a random number between 1 and 100
-	// Use srand(time(0)) to seed the random number generator so its different every turn.
+	// Generate a random number between 1 and 100 (Done)
+	// Use srand(time(0)) to seed the random number generator so its different every turn (Done)
 
 	// PLAYER INPUT
-	// Ask the player to guess the number.
-	// Read it with std::cin
+	// Ask the player to guess the number (Done)
+	// Read it with std::cin (Done)
 
 	// HINT SYSTEM	
-	// If guess is too low -> print "Too low! Try again."
-	// If guess is too high -> print "Too high! Try again."
+	// If guess is too low -> print "Too low! Try again." (Done)
+	// If guess is too high -> print "Too high! Try again." (Done)
 	// If guess is correct -> print "Congratulations! You guessed the number in X attempts!" and end the game.
 
 	// ATTEMPT COUNTER
 	// Track how many guesses the player has made.
 	// Display it when they win.
 
-	// Use a while loop that keeps running until the player guesses correctly.
-	// One loop = one guess.
+	// Use a while loop that keeps running until the player guesses correctly (Done)
+	// One loop = one guess (Done)
 
 	// EXTRAS
-	// Include play again option after winning.
+	// Include play again option after winning (Done)
 	// Add difficulty levels -> Easy (10 guesses), Medium (7 guesses), Hard (5 gueses).
 	// Input validation -> Ensure the player enters a number between 1 and 100 or types a letter.
 
@@ -45,6 +45,7 @@ int main()
 	// 4. Add the attempt counter.
 	// 5. Add play again.
 	// 6. Add difficulty levels.
+
 	char playAgain = 'y';
 
 	while (playAgain == 'y' || playAgain == 'Y')
@@ -74,6 +75,7 @@ int main()
 
 void GuessNumber(int &randomNumber, int guessNumber)
 {
+	clearScreen();
 	std::cout << "Your random number has been generated. Please enter a guess: ";
 	std::cin >> guessNumber;
 
