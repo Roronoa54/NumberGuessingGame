@@ -39,10 +39,16 @@ int main()
 	// 4. Add the attempt counter.
 	// 5. Add play again.
 	// 6. Add difficulty levels.
-	
-	srand(time(0)); // Seed the random number generator
-	int randomNumber = rand() % 100 + 1; // Generate a random number between 1 and 100. +1 is added to shift the range from 0-99 to 1-100
-	GuessNumber(randomNumber, 0);
+	char playAgain = 'y';
+
+	while (playAgain == 'y' || playAgain == 'Y')
+	{
+		srand(time(0)); // Seed the random number generator
+		int randomNumber = rand() % 100 + 1; // Generate a random number between 1 and 100. +1 is added to shift the range from 0-99 to 1-100
+		GuessNumber(randomNumber, 0);
+		std::cout << "\nDo you want to play again, if you enter 'no' the game will end? (y/n): ";
+		std::cin >> playAgain;
+	}
 	return 0;
 
 	// OPTIONAL
