@@ -43,7 +43,6 @@ int main()
 	srand(time(0)); // Seed the random number generator
 	int randomNumber = rand() % 100 + 1; // Generate a random number between 1 and 100. +1 is added to shift the range from 0-99 to 1-100
 	GuessNumber(randomNumber, 0);
-	std::cout << randomNumber << std::endl;
 	return 0;
 
 	// OPTIONAL
@@ -63,5 +62,21 @@ int main()
 
 void GuessNumber(int &randomNumber, int guessNumber)
 {
-	std::cout << "Your random number is: " << randomNumber << std::endl;
+	std::cout << "Your random number has been generated. Please enter a guess: ";
+	std::cin >> guessNumber;
+
+	while (guessNumber != randomNumber)
+	{
+		if (guessNumber < randomNumber)
+		{
+			std::cout << "Too low! Try again: ";
+		}
+		else
+		{
+			std::cout << "Too high! Try again: ";
+		}
+		std::cin >> guessNumber;
+	}
+	std::cout << "Congratulations! You guessed the number!" << std::endl;
+	std::cout << "The random number was: " << randomNumber << std::endl;
 }
