@@ -5,7 +5,7 @@
 #include <ctime> 	// std::time()
 #include <string>
 
-
+void GuessNumber(int &randomNumber, int guessNumber);
 int main()
 {
 	// Generate a random number between 1 and 100
@@ -41,8 +41,9 @@ int main()
 	// 6. Add difficulty levels.
 	
 	srand(time(0)); // Seed the random number generator
-	int randomNumber = rand() % 100 + 1; // Generate a random number between 1 and 100
-    std::cout << randomNumber;
+	int randomNumber = rand() % 100 + 1; // Generate a random number between 1 and 100. +1 is added to shift the range from 0-99 to 1-100
+	GuessNumber(randomNumber, 0);
+	std::cout << randomNumber << std::endl;
 	return 0;
 
 	// OPTIONAL
@@ -58,4 +59,9 @@ int main()
 	// Don't ignore std::cin. Always validate user input.
 
 	return 0;
+}
+
+void GuessNumber(int &randomNumber, int guessNumber)
+{
+	std::cout << "Your random number is: " << randomNumber << std::endl;
 }
