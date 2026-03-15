@@ -6,6 +6,12 @@
 #include <string>
 
 void GuessNumber(int &randomNumber, int guessNumber);
+
+void clearScreen()
+{
+	std::cout << "\033[2J\033[1;1H";
+}
+
 int main()
 {
 	// Generate a random number between 1 and 100
