@@ -16,6 +16,13 @@ void clearScreen()
 int main()
 {
 
+<<<<<<< HEAD
+=======
+	// PLAYER INPUT
+	// Ask the player to guess the number (Done)
+	// Read it with std::cin (Done)
+
+>>>>>>> inputValidation
 	// ATTEMPT COUNTER
 	// Track how many guesses the player has made.
 	// Display it when they win.
