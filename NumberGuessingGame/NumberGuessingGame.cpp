@@ -15,14 +15,6 @@ void clearScreen()
 
 int main()
 {
-
-<<<<<<< HEAD
-=======
-	// PLAYER INPUT
-	// Ask the player to guess the number (Done)
-	// Read it with std::cin (Done)
-
->>>>>>> inputValidation
 	// ATTEMPT COUNTER
 	// Track how many guesses the player has made.
 	// Display it when they win.
@@ -74,6 +66,7 @@ void GuessNumber(int &randomNumber, int guessNumber)
 	clearScreen();
 	std::cout << "Your random number has been generated. Please enter a guess: ";
 	
+	int attemptCounter = 0;
 		
 	while (guessNumber != randomNumber)
 	{
@@ -89,17 +82,18 @@ void GuessNumber(int &randomNumber, int guessNumber)
 
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+		attemptCounter++;
 		if (guessNumber < randomNumber)
 		{
 			std::cout << "Too low! Try again: ";
 		}
-		else
+		else if (guessNumber > randomNumber)
 		{
 			std::cout << "Too high! Try again: ";
 		}
 	}
 
-	std::cout << "Congratulations! You guessed the number!" << std::endl;
+	std::cout << "Congratulations! You guessed the number in " << attemptCounter << " tries!" << std::endl;
 	std::cout << "The random number was: " << randomNumber << std::endl;
 }
 
