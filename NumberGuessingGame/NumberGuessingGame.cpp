@@ -7,6 +7,7 @@
 
 void GuessNumber(int &randomNumber, int guessNumber);
 void GameDifficulty();
+void GameMenu();
 
 void clearScreen()
 {
@@ -61,6 +62,18 @@ int main()
 	return 0;
 }
 
+void GameMenu()
+{
+	int menuChoice;
+	std::cout << "Welcome to the Number Guessing Game!" << std::endl;
+	std::cout << "1. Start Game" << std::endl;
+	std::cout << "2. View Leaderboard" << std::endl;
+	std::cout << "3. Exit" << std::endl;
+
+	std::cin >> menuChoice;
+	std::cin.clear();
+	std::cin.ignore();
+}
 void GuessNumber(int &randomNumber, int guessNumber)
 {
 	clearScreen();
@@ -75,7 +88,7 @@ void GuessNumber(int &randomNumber, int guessNumber)
 		if (std::cin.fail())
 		{
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cin.ignore();
 			std::cout << "Invalid input, please enter a number: ";
 			continue;
 		}
